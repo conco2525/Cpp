@@ -80,7 +80,7 @@ while (true){
 
     if (S.size() == 0)
     {
-        cout << "YES" << endl;
+        cout << "Yes" << endl;
         break;
     } 
     
@@ -106,7 +106,7 @@ while (true){
     }
 
 
-        cout << "NO" << endl;
+        cout << "No" << endl;
         break;
 
 }
