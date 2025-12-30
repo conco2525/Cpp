@@ -6,13 +6,13 @@ int main() {
     int N;
     cin >> N;
     bool ans = true;
-    
+    int t, x, y, T=0, X=0, Y=0;
+
     for (int i = 0; i < N; i++)
-    {
-        int t, x, y;
+    {        
         cin >> t >> x >> y;
 
-        if ((x + y) > t)
+        if (abs(x - X) + abs(Y - y) > (t -T))
         {
             ans = false;
         }
@@ -21,6 +21,10 @@ int main() {
         {
             ans = false;
         }
+
+        T = t;
+        X = x;
+        Y = y;
         
     }
     
