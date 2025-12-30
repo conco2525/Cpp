@@ -20,7 +20,7 @@ int main() {
 
             if (S.at(i) == '#')
             {
-                Num.at(j +  i) = 9;
+                Num.at(j +  i) = -9;
             }
             
             
@@ -29,10 +29,10 @@ int main() {
     }
 
     // top of the pic
-
+    
     for (int i = 1; i < W-1; i++)
     {
-        if (Num.at(i) == 9)
+        if (Num.at(i) < 0)
         {
             Num.at(i + 1)++;  
         }
