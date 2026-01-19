@@ -1,34 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    string outfile="output.csv";
+int main(){
+    string outfile = "output.csv";
     ofstream ofs(outfile);
 
-    int N = 130;
+    int N = 2;
     srand(static_cast<unsigned int>(time(0)));
-    vector<int> SumOfDice(N);
+    vector<int> SumOfDice(N * 6 +1);
 
-    for (int i = 0; i < 3000; i++)
-    {
+    for (int i = 0; i < 3000; i++){
         int dice = 0;
-        for (int i = 0; i <20; ++i)
-        {
+        for (int i = 0; i < N; ++i){
             dice += rand() % 6 + 1;
-            
         }
-        SumOfDice.at(dice)++ ;
+        SumOfDice.at(dice)++;
     }
 
-    for (int i = 0; i < N; i++)
-    {
+    for (int i = 0; i < N * 6; i++){
         ofs << SumOfDice.at(i);
-        if (i != (N - 1))
-        {
-            ofs << ",";        }
-        
+        if (i != (N * 6 - 1)){
+            ofs << ",";
+        }
     }
-    
-    ofs << endl;
 
+    ofs << endl;
 }
