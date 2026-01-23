@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    int N, K, X, ans, sum=0;
+    int64_t N, K, X, ans, sum=0;
     cin >> N >> K >> X;
     vector<int> A(N);
     ans = N - K;
@@ -16,11 +16,11 @@ int main() {
     {
         sum += A.at(i);
         ans++;
-        if (sum > X)
+        if (sum >= X)
         {
             break;
         }
-        if (i == (N - 1))
+        else if (i == (N - 1))
         {
             ans = -1;
         }
