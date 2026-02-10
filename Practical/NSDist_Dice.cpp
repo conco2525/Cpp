@@ -6,8 +6,8 @@ int main() {
 
     auto start = std::chrono::high_resolution_clock::now();
 
-    int Num_dice=100, Num_trial=1000000;
-    vector<int> sum(Num_dice*6+1);
+    int Num_dice=10, Num_trial=10000, dice_dim=6, one_base=1;
+    vector<int> sum(Num_dice*dice_dim+1);
 
     srand(static_cast<unsigned int>(time(0)));
 
@@ -17,14 +17,14 @@ int main() {
     for(int j=0; j < Num_trial; j++){
         int dice=0;
     for(int i=0; i < Num_dice; i++){
-        dice += rand() % 6 + 1;
+        dice += rand() % dice_dim + one_base;
     }
     sum.at(dice)++;
     }
 
-    for(int k=0; k < Num_dice*6+1; k++){
+    for(int k=0; k < Num_dice*dice_dim+1; k++){
         ofs << sum.at(k);
-        if (k != Num_dice*6){
+        if (k != Num_dice*dice_dim){
             ofs << ",";
         }
         
