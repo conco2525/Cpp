@@ -5,7 +5,7 @@ using namespace std;
 int main() {
     auto start = std::chrono::high_resolution_clock::now();
     
-    int ppl=5, dice=10, arrive=600, N=5000, meal=15;        // initial condition
+    int ppl=10, dice=6, arrive=4449, N=3000, meal=20;        // initial condition
     
     srand(static_cast<unsigned int>(time(0)));
     string outfile = "Cafe.csv";    // output
@@ -19,7 +19,7 @@ int main() {
     for (int i=0; i<ppl; i++)           // open the cafe
     {
         int sum=meal;
-        for(int j=0; j < dice; j++) sum += rand() % 6;   // 0~5*dice which will the duration one visitor will stay
+        for(int j=0; j < dice; j++) sum += rand() % 6;   // 0~5*dice which will the duration one visitor will stay for
         
         time.at(i) = sum;
     }
@@ -35,7 +35,7 @@ int main() {
             time.at(i) = sum;
         }
 
-        if (time.at(i) > 1)          // past the time
+        if (time.at(i) > 1)          // progress the time
         {
             time.at(i) --;
         } 
@@ -60,7 +60,10 @@ int main() {
 
 ofs << endl;
 
+cout << 5 * dice / 2 + meal;
+
 auto end = std::chrono::high_resolution_clock::now();
 auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-cout << "time:" << duration << "ms" << endl;
+cout << "time:" << duration << "ms" << endl;    // order: ppl * (dice + arrive) * N
+// 6 * 10^7 /s
 }
