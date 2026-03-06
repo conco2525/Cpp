@@ -6,7 +6,7 @@ int main() {
 
     auto start = std::chrono::high_resolution_clock::now();
 
-    int Num_dice=10, Num_trial=10000, dice_dim=6, one_base=1;
+    int Num_dice=1000, Num_trial=100000, dice_dim=6, one_base=1;
     vector<int> sum(Num_dice*dice_dim+1);
 
     srand(static_cast<unsigned int>(time(0)));

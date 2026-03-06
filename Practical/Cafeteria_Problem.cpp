@@ -5,7 +5,7 @@ using namespace std;
 int main() {
     auto start = std::chrono::high_resolution_clock::now();
     
-    int ppl=10, dice=6, arrive=4449, N=3000, meal=20;        // initial condition
+    int ppl=10, dice=14, arrive=4449, N=3000, meal=0;        // initial condition
     
     srand(static_cast<unsigned int>(time(0)));
     string outfile = "Cafe.csv";    // output
@@ -19,7 +19,7 @@ int main() {
     for (int i=0; i<ppl; i++)           // open the cafe
     {
         int sum=meal;
-        for(int j=0; j < dice; j++) sum += rand() % 6;   // 0~5*dice which will the duration one visitor will stay for
+        for(int j=0; j < dice; j++) sum += rand() % 6;   // 0~5*dice which will be the duration one visitor will stay for
         
         time.at(i) = sum;
     }
