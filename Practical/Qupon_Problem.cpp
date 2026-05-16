@@ -5,7 +5,7 @@ int main() {
     double ans=0;
     vector<int64_t> prob={1, 0, 0, 0, 0};
 
-    for (int i = 0; i < 30; i++)
+    for (int i = 0; i < 50; i++)
     {
         int64_t a, b, c, d;
         a = prob.at(1);
